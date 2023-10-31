@@ -77,7 +77,7 @@
 (define (tranformer post)
   (if (member
         "little"
-        (cdr (assoc 'tags (post-metadata post))))
+        (post-ref post 'tags))
     littlify-sxml
     identity))
 
