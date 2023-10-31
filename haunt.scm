@@ -7,13 +7,13 @@
              (theme))
 
 
-(site #:title "Filip Łajszczak"
+(site #:title "Filip's Little Blog"
       #:domain "filip.lajszczak.dev"
       #:default-metadata
       '((author . "Filip Łajszczak")
         (email  . "filip@lajszczak.dev"))
       #:readers (list commonmark-reader)
-      #:builders (list (blog #:theme terminal-theme)
+      #:builders (list (blog #:theme little-theme)
                        (atom-feed)
                        (atom-feeds-by-tag)
                        (static-directory "static")))
