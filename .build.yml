@@ -1,0 +1,17 @@
+image: guix 
+packages:
+  - haunt
+  - guile-commonmark
+oauth: pages.sr.ht/PAGES:RW
+sources:
+  - git+https://git@git.sr.ht/~filiplajszczak/filip-lajszczak-dev
+environment:
+  site: filip.lajszczak.dev
+tasks:
+- package: |
+    cd filip-lajszczak-dev 
+    haunt build
+    tar -C site -cvz . > ../site.tar.gz
+- upload: |
+    acurl -f https://pages.sr.ht/publish/$site -Fcontent=@site.tar.gz
+
