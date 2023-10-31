@@ -1,26 +1,24 @@
 title: Test-Driven Development with Python revisited
-date: 2022-02-20 22:00
+date: 2023-10-31 08:00
 tags: tdd, python, book
 ---
 
-
-
 Harry Percival’s [Test-Driven Development with
-Pythony](https://www.obeythetestinggoat.com/) is a book that was so important
-for me, that I had to start a blog just to pay tribute to it. It has been almost
-eight years since the publication of the book, five since the second edition,
-and four since I was fortunate enough to read it. It was a ticket for the
-vehicle that took me from the happy hobby hacking to a much more rigorous land
-of semi-professional programming.
+Python](https://www.obeythetestinggoat.com/) was a transformative book for me,
+so much so that I had to start a blog just to pay tribute to it. It has been
+almost nine years since the publication of the book, six since the second
+edition, and five since I was fortunate enough to read it. It was a ticket for
+the vehicle that took me from the happy hobby hacking to a much more rigorous
+land of professional programming.
 
-![Harry Percival’s Test-Driven Development with Pythony book
+![Harry Percival’s Test-Driven Development with Python book
 cover](static/images/tdd-hjwp.png)
 
 As for someone who had not practiced Test-Driven Development before, the most
 valuable “Aha!” moment happened when the [concept of
 spiking](https://www.obeythetestinggoat.com/book/chapter_spiking_custom_auth.html#_exploratory_coding_aka_spiking)
 was introduced. I realized that all I had been doing until that point was just
-exploratory coding, called spiking. That does not mean that spiking is bad, it
+exploratory coding or spiking. That does not mean that spiking is bad, it
 is just not production-ready. You may think that in order to despike it, you
 should just add tests, but TTD says: “No”. The right thing is to write tests,
 and implement the same functionality
@@ -39,11 +37,13 @@ server](https://www.obeythetestinggoat.com/book/chapter_making_deployment_produc
 Other tools are introduced quietly in the background. For example [git version
 control](https://www.obeythetestinggoat.com/book/chapter_01.html#_starting_a_git_repository)
 is used through the whole book, and proposed methodology is going beyond the
-simplest usecases.
+basic use cases.
 
 Far from being limited to Django testing, the book gently introduces elements of
-functional programming, practical use of
-[decorators](https://www.obeythetestinggoat.com/book/chapter_fixtures_and_wait_decorator.html#_our_final_explicit_wait_helper_a_wait_decorator),
+[functional
+programming](https://www.obeythetestinggoat.com/book/chapter_hot_lava.html#_architectural_solutions),
+practical use
+of [decorators](https://www.obeythetestinggoat.com/book/chapter_fixtures_and_wait_decorator.html#_our_final_explicit_wait_helper_a_wait_decorator),
 and bits and pieces of devops. Deployment chapters are not limited to one or
 another platform as a service but go into lower level interaction with a server.
 
@@ -68,14 +68,16 @@ and architecture best practices.
 At the moment of the publication, versions of the packages used in the book were
 bleeding edge. As for today Python 3.6 and Django 1.11 are no longer exactly the
 versions one would use, but they are still very close to the current state of
-the technological stack, as both Django and Python are quite stable.
+the technological stack, as both Django and Python are quite stable. Also,
+author is [working on the third
+edition](https://www.obeythetestinggoat.com/book/preface.html) of the book.
 
 Even though I was reading the printed book, the fact that at the same time it
 was freely available online made the experience much easier in respect of
 following links, making notes and navigating around quite a big volume of dense
 material.
 
-The lecure of the book made me follow the trail to where the author had
+The lecture of the book made me follow the trail to where the author had
 opportunity to practice Test Driven Development, Pair Programming and Extreme
 Programming in general and I joined [the
 company](https://www.pythonanywhere.com/about/company_details/) where the book
@@ -86,3 +88,9 @@ about his experience with software architecture in another organization. Even a
 not very diligent reader could notice that his opinions had evolved. For those
 who would like to follow the evolution, I would recommend his [Pycon 2020 talk
 about mocks](https://youtu.be/rk-f3B-eMkI?t=9).
+
+As you see I am not following [little style that I started my blog
+with](obligatory-metablogging-post.html). Truthfully, that post was written
+few years ago before I had that weird idea, but there are more little posts on
+the way. I hope that the gap between conception and completion isn't as wide as
+it was for this one.
