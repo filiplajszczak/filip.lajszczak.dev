@@ -1,8 +1,6 @@
 (define-module (theme)
   #:use-module (srfi srfi-1)
-
   #:use-module (srfi srfi-19)
-
   #:use-module (haunt builder blog)
   #:use-module (haunt site)
   #:use-module (haunt post)
@@ -74,19 +72,20 @@
         ,(anchor "Sourcehut" "https://git.sr.ht/~filiplajszczak/filip-lajszczak-dev")
         ". Patches are welcome."))))
 
-(define (tranformer post)
-  (if (member
-        "little"
-        (post-ref post 'tags))
-    littlify-sxml
-    identity))
+(define (transform-post-sxml post)
+  (let ([transformer
+          (if
+            (string=? "little" (post-ref post 'style))
+            littlify-sxml
+            identity)])
+    (transformer (post-sxml post))))
 
 (define (little-post-template post)
   `((h2 ,(post-ref post 'title))
      (p (@ (class "author")) "by " ,(post-ref post 'author)
        (br) ,(date->string (post-date post) "~1 ~H:~M"))
 
-     (div ,((tranformer post) (post-sxml post)))))
+     (div ,(transform-post-sxml post))))
 
 (define (little-collection-template site title posts prefix)
   (define (post-uri post)

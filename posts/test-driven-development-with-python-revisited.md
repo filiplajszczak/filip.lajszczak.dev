@@ -1,6 +1,7 @@
 title: Test-Driven Development with Python revisited
 date: 2023-10-31 08:00
 tags: tdd, python, book
+style: plain
 ---
 
 Harry Percival’s [Test-Driven Development with
