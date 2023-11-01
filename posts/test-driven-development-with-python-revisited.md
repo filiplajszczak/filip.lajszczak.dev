@@ -10,7 +10,7 @@ so much so that I had to start a blog just to pay tribute to it. It has been
 almost nine years since the publication of the book, six since the second
 edition, and five since I was fortunate enough to read it. It was a ticket for
 the vehicle that took me from the happy hobby hacking to a much more rigorous
-land of professional programming.
+land of professional software development.
 
 ![Harry Percival’s Test-Driven Development with Python book
 cover](static/images/tdd-hjwp.png)
