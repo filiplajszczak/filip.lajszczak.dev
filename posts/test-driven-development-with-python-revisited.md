@@ -90,7 +90,7 @@ not very diligent reader could notice that his opinions had evolved. For those
 who would like to follow the evolution, I would recommend his [Pycon 2020 talk
 about mocks](https://youtu.be/rk-f3B-eMkI?t=9).
 
-As you see I am not following [little style that I started my blog
+As you see I am not adhering to [the little style that I started my blog
 with](obligatory-metablogging-post.html). Truthfully, that post was written
 few years ago before I had that weird idea, but there are more little posts on
 the way. I hope that the gap between conception and completion isn't as wide as
