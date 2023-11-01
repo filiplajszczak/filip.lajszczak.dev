@@ -50,20 +50,18 @@ generator written
 by [Dave Thompson](https://dthompson.us/)
 in [Guile Scheme](https://www.gnu.org/software/guile/).
 
-So, we had to learn Guile Scheme?
+So, did we have to learn Guile Scheme?
 
 Yes, I always wanted to learn Scheme better, and this was a good opportunity.
-I'm
-not an expert, but after solving [some Advent of Code
+I'm not an expert, but after solving [some Advent of Code
 problems](https://git.sr.ht/~filiplajszczak/advent-of-code-2022)
 and [porting](https://gitlab.com/filiplajszczak/guile-algorithms) [Conor 
 Hoekstra’s](https://github.com/codereport) [racket-algorithms](https://docs.racket-lang.org/algorithms/index.html)
-to Guile, I'm not afraid
-of it anymore.
+to Guile, I'm not afraid of it anymore.
 
 Is that blog the first page we deployed with Haunt?
 
-No, I have [Awesome Haunt Page](https://awesome.haunt.page/) as a sandbox &
+No, I have [Awesome Haunt Page](https://awesome.haunt.page/) as a sandbox and
 testing ground.
 
 Was it helpful?
@@ -104,4 +102,4 @@ I will need to dedicate a separate post to that. It is a long story.
 
 You know how it sounds, right?
 
-We know, my precious.
+We know, my precious. We know.
