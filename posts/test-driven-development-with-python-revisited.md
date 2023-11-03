@@ -33,11 +33,11 @@ holistic approach embracing all layers of the web development stack. Of course,
 Python and Django are the heart of it, but there is much more. Some layers are
 only touched (like [rather minimalistic framework-less frontend
 javascript](https://www.obeythetestinggoat.com/book/chapter_javascript.html)),
-or [configuration of nginx
+or [configuring an nginx
 server](https://www.obeythetestinggoat.com/book/chapter_making_deployment_production_ready.html).
 Other tools are introduced quietly in the background. For example [git version
 control](https://www.obeythetestinggoat.com/book/chapter_01.html#_starting_a_git_repository)
-is used through the whole book, and proposed methodology is going beyond the
+is used through the whole book, and the proposed methodology is going beyond the
 basic use cases.
 
 Far from being limited to Django testing, the book gently introduces elements of
@@ -48,8 +48,8 @@ of [decorators](https://www.obeythetestinggoat.com/book/chapter_fixtures_and_wai
 and bits and pieces of devops. Deployment chapters are not limited to one or
 another platform as a service but go into lower level interaction with a server.
 
-Levels of complexity are built up gradually. Reader is led by hand from naive
-basic solutions to more advanced Django. From running tests by hand to
+Levels of complexity are built up gradually. The reader is led by hand from
+naive basic solutions to more advanced Django. From running tests by hand to
 deployment of automation and [Continuous
 Integration](https://www.obeythetestinggoat.com/book/chapter_CI.html). All of
 that without jumping over intermediate steps and with proper explanation.
@@ -57,7 +57,8 @@ that without jumping over intermediate steps and with proper explanation.
 At all the stages it is clear that the book is about tests and testing and that
 is the subject covered thoroughly. All the topics touched in the book are there
 on purpose and all are covered to the extent required by the context.
-Nevertheless, the author is deploying traffic lights and road signs to tangled
+Nevertheless, the author is deploying traffic lights and road signs to the
+tangled
 streets of the city-maze of modern web development.
 
 The other nice thing about the book is that it is not an enclosed garden, but at
@@ -69,7 +70,7 @@ and architecture best practices.
 At the moment of the publication, versions of the packages used in the book were
 bleeding edge. As for today Python 3.6 and Django 1.11 are no longer exactly the
 versions one would use, but they are still very close to the current state of
-the technological stack, as both Django and Python are quite stable. Also,
+the technological stack, as both Django and Python are quite stable. Also, the
 author is [working on the third
 edition](https://www.obeythetestinggoat.com/book/preface.html) of the book.
 
