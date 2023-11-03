@@ -12,9 +12,13 @@
       (list lst)
       (cons (take lst size)
         (tail-call (drop lst step)))))
-  (if (>= step (length lst))
-    (throw 'inconsistent-arguments "step has to be smaller then length of the list")
-    (tail-call lst)))
+  (cond
+    [(> step (length lst))
+      (throw
+        'inconsistent-arguments
+        "step has to be equal to or smaller then length of the list")]
+    [(= step (length lst)) (list lst)]
+    [else (tail-call lst)]))
 
 (define (chunks-of lst k)
   (sliding lst k k))
@@ -100,8 +104,7 @@
                      ,(date->string (post-date post) "~1")
                      " — "
                      ,(post-ref post 'title))))
-           posts))
-     ))
+           posts))))
 
 (define little-theme
   (theme #:name "Little"
