@@ -27,7 +27,7 @@
   (define (convert-to-tr pair)
     (list
       'tr '(@ (class "border-bottom-thin border-top-thin"))
-      (list 'td (cdr (car pair))) (list 'td (cdr (cadr pair)))))
+      (list 'td (car pair)) (list 'td (cadr pair))))
 
   (let ((pairs (chunks-of sxml 2)))
     (list
