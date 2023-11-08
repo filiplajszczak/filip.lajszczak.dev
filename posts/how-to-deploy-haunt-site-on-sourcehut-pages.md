@@ -19,7 +19,7 @@ It is free if you build your website locally and upload it to sourcehut pages.
 
 And if you want to build it on sourcehut?
 
-Then you need to have paid account to use another part of sourcehut
+Then you need to have a paid account to use another part of sourcehut
 ecosystem - [build service](https://man.sr.ht/builds.sr.ht/).
 
 What is the advantage of building on sourcehut?
@@ -73,16 +73,16 @@ What is the default domain?
 
 It is `yourusername.srht.site`
 
-What if I already have custom domain?
+What if I already have a custom domain?
 
 Then you need to add a CNAME record to your DNS configuration. It should point
 to `pages.sr.ht.`
 
-What if it is naked domain?
+What if it is a naked domain?
 
-Then you need to add an A record to your DNS configuration. As for today it
-should point to `173.195.146.139` but
-that [may change in the future](https://srht.site/custom-domains).
+Then you need to add an A record to your DNS configuration. As for today, it 
+should point to `173.195.146.139` but that [may change in the 
+future](https://srht.site/custom-domains).
 
 Ok, I know what domain to use. How do I upload my website?
 
@@ -97,7 +97,7 @@ What about the ssl certificate?
 
 It's provided for your site by sourcehut automatically.
 
-So, what about fully automated build and deployment?
+So, what about the fully automated build and deployment?
 
 We need to use build service that, as we mentioned before, requires paid
 account.
@@ -141,7 +141,7 @@ a link to the build log.
 
 What if build fails for some reason?
 
-The great thing about sourcehut is that you have for hours to ssh into the build
+The great thing about sourcehut is that you have four hours to ssh into the build
 machine and debug it.
 
 Why that blog looks so weird?
