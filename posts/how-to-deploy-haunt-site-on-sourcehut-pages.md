@@ -4,7 +4,11 @@ tags: metablogging, haunt, guile, guix, sourcehut
 style: little
 ---
 
-What are [sourcehut pages](https://srht.site/)?
+How is this site deployed?
+
+It's hosted on [sourcehut pages](https://srht.site/) and build straight from the repository.
+
+What are sourcehut pages?
 
 It's a service that allows you to host static websites. It's a part of
 broader [sourcehut](https://sourcehut.org/) ecosystem.
