@@ -86,7 +86,8 @@ future](https://srht.site/custom-domains).
 
 Ok, I know what domain to use. How do I upload my website?
 
-Run `hut push site.tar.gz` command.
+Run `hut push -d yourusername.srht.site site.tar.gz` command. Replace 
+`yourusername.srht.site` with your custom domain if you have one.
 
 Is it all?
 
