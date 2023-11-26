@@ -1,18 +1,12 @@
 image: guix 
-packages:
-  - haunt
-  - hut
-  - guile-commonmark
 oauth: pages.sr.ht/PAGES:RW
 sources:
   - git+https://git@git.sr.ht/~filiplajszczak/filip-lajszczak-dev
 environment:
   site: filip.lajszczak.dev
 tasks:
-- package: |
-    cd filip-lajszczak-dev 
-    haunt build
-    tar -C site -cvz . > ../site.tar.gz
-- upload: |
-    hut pages publish -d $site site.tar.gz
-
+- guix: |
+    guix pull
+- shell: |
+    cd filip-lajszczak-dev
+    guix shell -m build-manifest.scm -- ./publish.sh

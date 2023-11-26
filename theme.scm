@@ -1,27 +1,11 @@
 (define-module (theme)
   #:use-module (srfi srfi-1)
   #:use-module (srfi srfi-19)
+  #:use-module (algorithms)
   #:use-module (haunt builder blog)
   #:use-module (haunt site)
   #:use-module (haunt post)
   #:export (little-theme))
-
-(define* (sliding lst size #:optional (step 1))
-  (define (tail-call lst)
-    (if (>= size (length lst))
-      (list lst)
-      (cons (take lst size)
-        (tail-call (drop lst step)))))
-  (cond
-    [(> step (length lst))
-      (throw
-        'inconsistent-arguments
-        "step has to be equal to or smaller then length of the list")]
-    [(= step (length lst)) (list lst)]
-    [else (tail-call lst)]))
-
-(define (chunks-of lst k)
-  (sliding lst k k))
 
 (define (littlify-sxml sxml)
   (define (convert-to-tr pair)
