@@ -3,6 +3,7 @@
              (haunt builder assets)
              (haunt builder blog)
              (haunt builder atom)
+             (haunt builder rss)
              (haunt reader commonmark)
              (theme))
 
@@ -16,4 +17,5 @@
       #:builders (list (blog #:theme little-theme)
                        (atom-feed)
                        (atom-feeds-by-tag)
+                       (rss-feed)
                        (static-directory "static")))
