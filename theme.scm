@@ -38,6 +38,7 @@
                     (style "text-decoration: none; color: black;"))
                  ,(site-title site))))
          ,body
+         (br)
          ,(footer)))))
 
 (define (footer)
