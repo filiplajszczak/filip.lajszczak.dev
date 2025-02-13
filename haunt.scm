@@ -8,7 +8,7 @@
              (theme))
 
 
-(site #:title "Filip's Little Blog"
+(site #:title "Some opinions, held with varying degrees of certainty."
       #:domain "filip.lajszczak.dev"
       #:default-metadata
       '((author . "Filip Łajszczak")
