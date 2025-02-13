@@ -36,7 +36,9 @@
          (header
            (h1 (a (@ (href "/")
                     (style "text-decoration: none; color: black;"))
-                 ,(site-title site))))
+                 ,(site-title site)))
+           (p (@ (class "author")) "by Filip Łajszczak")
+           ())
          ,body
          (br)
          ,(footer)))))
@@ -71,8 +73,7 @@
 
 (define (little-post-template post)
   `((h2 ,(post-ref post 'title))
-     (p (@ (class "author")) "by " ,(post-ref post 'author)
-       (br) ,(date->string (post-date post) "~1 ~H:~M"))
+     (p (@ (class "author")) ,(date->string (post-date post) "~1 ~H:~M"))
 
      (div ,(transform-post-sxml post))))
 
