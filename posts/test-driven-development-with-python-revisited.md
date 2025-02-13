@@ -89,7 +89,7 @@ After 2017, Harry wrote [another book](https://www.cosmicpython.com/), this time
 about his experience with software architecture in another organization. Even a
 not very diligent reader could notice that his opinions had evolved. For those
 who would like to follow the evolution, I would recommend his [Pycon 2020 talk
-about mocks](https://youtu.be/rk-f3B-eMkI?t=9).
+about mocks](https://www.youtube.com/watch?v=rk-f3B-eMkI).
 
 As you see I am not adhering to [the little style that I started my blog
 with](obligatory-metablogging-post.html). Truthfully, that post was written
