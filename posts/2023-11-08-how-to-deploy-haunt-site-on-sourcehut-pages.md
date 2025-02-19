@@ -1,4 +1,4 @@
-title: How to deploy Haunt site on sourcehut pages
+title: How to Deploy Haunt Site on Sourcehut Pages
 date: 2023-11-08 20:04
 tags: metablogging, haunt, guile, guix, sourcehut
 style: little

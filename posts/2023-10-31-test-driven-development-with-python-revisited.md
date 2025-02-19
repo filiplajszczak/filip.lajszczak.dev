@@ -1,4 +1,4 @@
-title: Test-Driven Development with Python revisited
+title: Test-Driven Development with Python Revisited
 date: 2023-10-31 08:00
 tags: tdd, python, book
 style: plain

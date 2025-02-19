@@ -1,4 +1,4 @@
-title: Obligatory metablogging post
+title: Obligatory Metablogging Post
 date: 2023-10-30 07:00
 tags: metablogging, haunt, guile, guix, sourcehut, little
 style: little
