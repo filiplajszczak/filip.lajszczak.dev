@@ -1,6 +1,6 @@
 title: Testing Dependency Injection with Mocks – Notes on the Margin of Chapter 3 of Architecture Patterns with Python
 date: 2025-02-13 08:00
-tags: tdd, python, book
+tags: tdd, python, book, pytest
 style: plain
 ---
 
