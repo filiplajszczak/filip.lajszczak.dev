@@ -14,7 +14,7 @@ occasional random failure.
 
 Sometimes, all you need is to retry the test. In the context of pytest, there
 are several plugins available to handle
-retries. [Brian Okken](https://testandcode.com/) gave a great overview of
+retries. [Brian Okken](https://pythontest.com/) gave a great overview of
 various options in his short podcast
 episode [#213: Repeating Tests](https://testandcode.com/213). That episode
 inspired me to explore this problem in more depth and find a solution that fits
@@ -25,7 +25,7 @@ consistently fail for a valid reason, I tried
 out [pytest-rerunfailures](https://pypi.org/project/pytest-rerunfailures/). It
 retries failing tests until they either pass or reach the maximum number of
 retries, and it also reports how many retries were needed in the test
-summary — just what I was looking for.
+summary - just what I was looking for.
 
 However, I also wanted a clear indication when the test suite succeeded only
 after retries. By default, pytest-rerunfailures doesn't make this fact obvious
