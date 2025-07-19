@@ -1,6 +1,6 @@
 title: My Land of Scheme 2025
 date: 2025-02-15 08:00
-tags: goblins, guile, guix, haunt, mes, pre-scheme, racket, reproducibility, scheme, shepherd, spritely
+tags: goblins, guile, guix, haunt, mes, pre-scheme, racket, reproducibility, scheme, shepherd, spritely, gnu
 style: plain
 ---
 
