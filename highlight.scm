@@ -2,27 +2,14 @@
   #:use-module (ice-9 match)
   #:use-module (sxml match)
   #:use-module (syntax-highlight)
-  #:use-module (syntax-highlight c)
-  #:use-module (syntax-highlight javascript)
-  #:use-module (syntax-highlight lisp)
-  #:use-module (syntax-highlight python)
-  #:use-module (syntax-highlight scheme)
-  #:use-module (syntax-highlight xml)
   #:export (highlight-code))
 
+;; Now using the fixed convenience procedures that resolve lexers
+;; from their correct modules using resolve-interface
 (define (maybe-highlight-code lang source)
-  (let ((lexer (match lang
-                 ('scheme lex-scheme)
-                 ('guile lex-scheme)
-                 ('lisp   lex-lisp)
-                 ('xml    lex-xml)
-                 ('html   lex-xml)
-                 ('c      lex-c)
-                 ('python lex-python)
-                 ((or 'js 'javascript) lex-javascript)
-                 (_ #f))))
-    (if lexer
-        (highlights->sxml (highlight lexer source))
+  (let ((highlighted (highlight-by-language (symbol->string lang) source)))
+    (if highlighted
+        (highlights->sxml highlighted)
         source)))
 
 (define (highlight-code . tree)

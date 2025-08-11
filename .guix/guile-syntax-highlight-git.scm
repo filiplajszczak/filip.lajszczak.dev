@@ -16,12 +16,12 @@
     (source (origin
               (method git-fetch)
               (uri (git-reference
-                    (url "https://git.dthompson.us/guile-syntax-highlight/")
-                    (commit "e40cc75f93aedf52d37c8b9e4f6be665e937e21d")))
+                    (url "https://codeberg.org/filiplajszczak/guile-syntax-highlight.git")
+                    (commit "69009cbf719aa2faffb044d5a7ee384c9d8d55a1")))
               (file-name (git-file-name name version))
               (sha256
                (base32
-                "0iqspd8wdxizv0z3adxlxx6bzfx1376qzc4bwbwrdln4p7fc975m"))))
+                "15r6xq1j31139cgws1x10klpab16aqqna3p0wkc5ns4zgffyy2rd"))))
     (build-system gnu-build-system)
     (arguments
      `(#:make-flags '("GUILE_AUTO_COMPILE=0")))
