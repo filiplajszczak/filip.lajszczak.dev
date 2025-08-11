@@ -728,3 +728,29 @@ h5,
 h6 {
   margin-bottom: 0.8rem;
 }
+
+/* Syntax highlighting - David Thompson inspired */
+pre {
+  background: #222034;
+  color: #deeed6;
+}
+
+code {
+  background: #eee;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.syntax-comment { color: #999; font-style: italic; }
+.syntax-string { color: #95e454; }
+.syntax-keyword { color: #e5786d; }
+.syntax-special { color: #8ac6f2; font-weight: bold; }
+.syntax-symbol { color: #deeed6; }
+.syntax-open, .syntax-close { color: #999; }
+.syntax-variable { color: #deeed6; }
+.syntax-constant { color: #95e454; }

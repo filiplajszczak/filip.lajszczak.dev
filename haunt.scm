@@ -5,6 +5,7 @@
              (haunt builder atom)
              (haunt builder rss)
              (haunt reader commonmark)
+             (markdown)
              (theme))
 
 
@@ -13,7 +14,7 @@
       #:default-metadata
       '((author . "Filip Łajszczak")
         (email  . "filip@lajszczak.dev"))
-      #:readers (list commonmark-reader)
+      #:readers (list commonmark-reader*)
       #:builders (list (blog #:theme little-theme)
                        (atom-feed)
                        (atom-feeds-by-tag)

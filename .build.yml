@@ -9,4 +9,4 @@ tasks:
     guix pull
 - shell: |
     cd filip-lajszczak-dev
-    guix shell -m build-manifest.scm -- ./publish.sh
+    guix shell -L .guix -m .guix/build-manifest.scm -- ./publish.sh
