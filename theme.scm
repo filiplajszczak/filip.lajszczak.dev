@@ -7,6 +7,11 @@
   #:use-module (haunt post)
   #:export (little-theme))
 
+(register-metadata-parser!
+ 'style
+ (lambda (str)
+   (map string-trim-both (string-split str #\,))))
+
 (define (littlify-sxml sxml)
   (define (convert-to-tr pair)
     (list
@@ -21,27 +26,48 @@
 (define* (anchor content #:optional (uri content))
   `(a (@ (href ,uri)) ,content))
 
+(define (needs-mathjax? body)
+  "Check if body contains a div with data-needs-mathjax attribute"
+  (and (pair? body)
+       (pair? (car body))
+       (eq? (caar body) 'div)
+       (let ((attrs (and (pair? (cdar body)) (pair? (cadar body)) (cadar body))))
+         (and attrs (assq-ref (cdr attrs) 'data-needs-mathjax)))))
+
 (define (little-layout site title body)
-  `((doctype html)
-     (head
-       (meta (@ (charset "utf-8")))
-       (meta (@ (name "viewport")
-               (content "width=device-width, initial-scale=1")))
-       (title ,(string-append title " — " (site-title site))))
-     ;; css
-     (link (@ (rel "stylesheet")
-             (href "static/css/style.css")))
-     (body
-       (div (@ (class "container"))
-         (header
-           (h1 (a (@ (href "/")
-                    (style "text-decoration: none; color: black;"))
-                 ,(site-title site)))
-           (p (@ (class "author")) "by Filip Łajszczak")
-           ())
-         ,body
-         (br)
-         ,(footer)))))
+  (let ((include-mathjax (needs-mathjax? body)))
+    `((doctype html)
+       (head
+         (meta (@ (charset "utf-8")))
+         (meta (@ (name "viewport")
+                 (content "width=device-width, initial-scale=1")))
+         (title ,(string-append title " — " (site-title site)))
+         ;; css
+         (link (@ (rel "stylesheet")
+                 (href "static/css/style.css")))
+         ;; mathjax
+         ,@(if include-mathjax
+             `((script (@ (type "text/javascript"))
+                 "window.MathJax = {
+                    tex: {
+                      inlineMath: [['$', '$']],
+                      displayMath: [['$$', '$$']]
+                    }
+                  };")
+               (script (@ (type "text/javascript")
+                         (src "static/scripts/tex-mml-chtml.js"))))
+             '()))
+       (body
+         (div (@ (class "container"))
+           (header
+             (h1 (a (@ (href "/")
+                      (style "text-decoration: none; color: black;"))
+                   ,(site-title site)))
+             (p (@ (class "author")) "by Filip Łajszczak")
+             ())
+           ,body
+           (br)
+           ,(footer))))))
 
 (define (footer)
   `((div (@ (class "footnotes"))
@@ -63,19 +89,24 @@
         ,(anchor "Sourcehut" "https://git.sr.ht/~filiplajszczak/filip-lajszczak-dev")
         ". Patches are welcome."))))
 
+(define (post-styles post)
+  "Return list of styles for POST, or the empty list if no styles are specified."
+  (or (post-ref post 'style) '()))
+
 (define (transform-post-sxml post)
   (let ([transformer
-          (if
-            (string=? "little" (post-ref post 'style))
+          (if (member "little" (post-styles post))
             littlify-sxml
             identity)])
     (transformer (post-sxml post))))
 
 (define (little-post-template post)
-  `((h2 ,(post-ref post 'title))
-     (p (@ (class "author")) ,(date->string (post-date post) "~1 ~H:~M"))
-
-     (div ,(transform-post-sxml post))))
+  (let ((needs-math? (member "math" (post-styles post))))
+    `((div (@ (class "post-content")
+              ,@(if needs-math? `((data-needs-mathjax "true")) '()))
+        (h2 ,(post-ref post 'title))
+        (p (@ (class "author")) ,(date->string (post-date post) "~1 ~H:~M"))
+        (div ,(transform-post-sxml post))))))
 
 (define (little-collection-template site title posts prefix)
   (define (post-uri post)
