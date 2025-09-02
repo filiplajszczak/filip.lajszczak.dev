@@ -52,10 +52,13 @@
                     tex: {
                       inlineMath: [['$', '$']],
                       displayMath: [['$$', '$$']]
+                    },
+                    chtml: {
+                      fontURL: '/static/fonts/mathjax'
                     }
                   };")
                (script (@ (type "text/javascript")
-                         (src "static/scripts/tex-mml-chtml.js"))))
+                         (src "/static/scripts/tex-mml-chtml.js"))))
              '()))
        (body
          (div (@ (class "container"))
