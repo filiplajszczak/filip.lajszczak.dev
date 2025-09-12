@@ -7,7 +7,7 @@
 ;; Now using the fixed convenience procedures that resolve lexers
 ;; from their correct modules using resolve-interface
 (define (maybe-highlight-code lang source)
-  (let ((highlighted (highlight-by-language (symbol->string lang) source)))
+  (let ((highlighted (highlight lang source)))
     (if highlighted
         (highlights->sxml highlighted)
         source)))

@@ -2,6 +2,8 @@
              (gnu packages guile)
              (gnu packages version-control)
              (gnu packages web)
+             (gnu packages base)
+             (guix profiles)
              (guile-syntax-highlight-git))
 
 (packages->manifest

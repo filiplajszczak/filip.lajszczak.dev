@@ -747,10 +747,13 @@ pre code {
 }
 
 .syntax-comment { color: #999; font-style: italic; }
+.syntax-multi-line-comment { color: #999; font-style: italic; }
 .syntax-string { color: #95e454; }
+.syntax-number { color: #f2ce5b; }
 .syntax-keyword { color: #e5786d; }
 .syntax-special { color: #8ac6f2; font-weight: bold; }
 .syntax-symbol { color: #deeed6; }
+.syntax-operator { color: #8ac6f2; }
 .syntax-open, .syntax-close { color: #999; }
 .syntax-variable { color: #deeed6; }
 .syntax-constant { color: #95e454; }
