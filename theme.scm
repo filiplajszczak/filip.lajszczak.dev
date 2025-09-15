@@ -44,7 +44,7 @@
          (title ,(string-append title " — " (site-title site)))
          ;; css
          (link (@ (rel "stylesheet")
-                 (href "static/css/style.css")))
+                 (href "/static/css/style.css")))
          ;; mathjax
          ,@(if include-mathjax
              `((script (@ (type "text/javascript"))
@@ -103,12 +103,37 @@
             identity)])
     (transformer (post-sxml post))))
 
+(define (tag->link tag)
+  "Convert TAG to an SXML link"
+  (anchor tag (string-append "/tags/" tag ".html")))
+
+(define (intersperse-with separator items)
+  "Intersperse ITEMS with SEPARATOR"
+  (if (null? items)
+      '()
+      (fold-right (lambda (item acc)
+                    (if (null? acc)
+                        (list item)
+                        (cons item (cons separator acc))))
+                  '()
+                  items)))
+
+(define (render-tag-links post)
+  "Generate tag links for POST"
+  (let ((tags (post-tags post)))
+    (if (null? tags)
+        '()
+        `((p (@ (class "tags"))
+             "Tags: "
+             ,@(intersperse-with " | " (map tag->link tags)))))))
+
 (define (little-post-template post)
   (let ((needs-math? (member "math" (post-styles post))))
     `((div (@ (class "post-content")
               ,@(if needs-math? `((data-needs-mathjax "true")) '()))
         (h2 ,(post-ref post 'title))
         (p (@ (class "author")) ,(date->string (post-date post) "~1 ~H:~M"))
+        ,@(render-tag-links post)
         (div ,(transform-post-sxml post))))))
 
 (define (little-collection-template site title posts prefix)
