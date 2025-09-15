@@ -127,6 +127,15 @@
              "Tags: "
              ,@(intersperse-with " | " (map tag->link tags)))))))
 
+(define (render-tag-cloud posts)
+  "Generate tag links with post counts from POSTS"
+  (map (lambda (tag-count-pair)
+         (let ((tag (car tag-count-pair))
+               (count (length (cdr tag-count-pair))))
+           `(span ,(anchor tag (string-append "/tags/" tag ".html"))
+                  " (" ,count ")")))
+       (posts/group-by-tag posts)))
+
 (define (little-post-template post)
   (let ((needs-math? (member "math" (post-styles post))))
     `((div (@ (class "post-content")
@@ -149,7 +158,9 @@
                      ,(date->string (post-date post) "~1")
                      " — "
                      ,(post-ref post 'title))))
-           posts))))
+           posts))
+     (h3 "Tags")
+     (p ,@(intersperse-with " | " (render-tag-cloud posts)))))
 
 (define little-theme
   (theme #:name "Little"
