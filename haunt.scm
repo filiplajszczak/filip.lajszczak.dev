@@ -18,7 +18,7 @@
     (map (match-lambda
            ((tag . tagged-posts)
             (serialized-artifact
-             (string-append "tags/" tag ".html")
+             (tag-collection-url tag)
              ((theme-layout little-theme)
               site
               (string-append "Tag: " tag)

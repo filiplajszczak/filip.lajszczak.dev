@@ -5,7 +5,8 @@
   #:use-module (haunt builder blog)
   #:use-module (haunt site)
   #:use-module (haunt post)
-  #:export (little-theme))
+  #:export (little-theme
+            tag-collection-url))
 
 (register-metadata-parser!
  'style
@@ -103,9 +104,13 @@
             identity)])
     (transformer (post-sxml post))))
 
+(define (tag-collection-url tag)
+  "Generate URL for TAG collection page"
+  (string-append "/tags/" tag ".html"))
+
 (define (tag->link tag)
   "Convert TAG to an SXML link"
-  (anchor tag (string-append "/tags/" tag ".html")))
+  (anchor tag (tag-collection-url tag)))
 
 (define (intersperse-with separator items)
   "Intersperse ITEMS with SEPARATOR"
@@ -132,7 +137,7 @@
   (map (lambda (tag-count-pair)
          (let ((tag (car tag-count-pair))
                (count (length (cdr tag-count-pair))))
-           `(span ,(anchor tag (string-append "/tags/" tag ".html"))
+           `(span ,(anchor tag (tag-collection-url tag))
                   " (" ,count ")")))
        (posts/group-by-tag posts)))
 
